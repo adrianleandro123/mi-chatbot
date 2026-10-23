@@ -19,6 +19,18 @@ EXTENSIONES = ["png", "jpg", "jpeg", "webp", "pdf", "txt", "md", "csv", "docx"]
 
 st.set_page_config(page_title="Mi Chatbot", page_icon="🤖")
 st.title(TITULO)
+st.markdown(
+    """
+    <style>
+    #MainMenu {visibility: hidden;}
+    footer {visibility: hidden;}
+    [data-testid="stToolbar"] {display: none;}
+    [data-testid="stDecoration"] {display: none;}
+    [class*="viewerBadge"] {display: none !important;}
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
 
 api_key = os.getenv("GEMINI_API_KEY")
 if not api_key:
